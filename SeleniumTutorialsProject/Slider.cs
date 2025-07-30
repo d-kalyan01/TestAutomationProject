@@ -29,6 +29,8 @@ namespace SeleniumAutomation
 
             // Move the slider handle by an offset (e.g., 0 on Y, 100 on X)
             actions.DragAndDropToOffset(sliderHandle, 100, 0).Perform();
+
+
         }
     }
 
