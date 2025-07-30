@@ -24,6 +24,7 @@ namespace SeleniumAutomation
             Thread.Sleep(1000);
             action.ContextClick(link);
 
+
         }
     }
 
