@@ -22,6 +22,7 @@ namespace SeleniumTutorialsProject
             driver.Manage().Window.Maximize();
 
             Console.WriteLine(driver.Title);
+            
         }
     }
 }

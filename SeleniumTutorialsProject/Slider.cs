@@ -31,6 +31,8 @@ namespace SeleniumAutomation
             actions.DragAndDropToOffset(sliderHandle, 100, 0).Perform();
 
 
+
+
         }
     }
 
