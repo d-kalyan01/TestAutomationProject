@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
-
+using OpenQA.Selenium.Firefox;
+using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace SeleniumAutomation
 {
@@ -14,32 +17,28 @@ namespace SeleniumAutomation
     {
         static IWebDriver driver;
 
-        public static void Main(string[] args)
+        public static void Main(String[] args)
         {
             driver = new ChromeDriver();
             driver.Url = "https://sso.teachable.com/secure/673/identity/sign_up/";
             driver.Manage().Window.Maximize();
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
 
-            IList<string> windhandle = driver.WindowHandles;
-            Console.WriteLine("total windows:" + windhandle.Count);
-            driver.FindElement(By.LinkText("Privacy Policy")).Click();
+            driver.FindElement(By.LinkText("Terms of Use")).Click();
 
+            IList<string> windows = driver.WindowHandles;
+            Console.WriteLine("count of windows:"+windows.Count);
+            
 
-            windhandle = driver.WindowHandles;
-            Console.WriteLine("total windows:"+ windhandle.Count);
-
-            driver.SwitchTo().Window(windhandle[1]);
-            //button on next window
             driver.FindElement(By.Id("header-sign-up-btn")).Click();
-
-             windhandle = driver.WindowHandles;
-            Console.WriteLine("total windows:" + windhandle.Count);
-
-            driver.SwitchTo().Window(windhandle[0]);
-            //button on main page
-            driver.FindElement(By.Name("sign_up_method")).Click();
+            Console.WriteLine("count of windows:" + windows.Count);
+            //driver.FindElement(By.Name("sign_up_method")).Click();
+            //driver.FindElement(By.Id("name")).SendKeys("Kalyan");
 
             driver.Close();
+
+
+
 
 
 
