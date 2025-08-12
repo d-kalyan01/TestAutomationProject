@@ -31,31 +31,6 @@ namespace SeleniumAutomation
             IJavaScriptExecutor je = driver as IJavaScriptExecutor;
             je.ExecuteScript("arguments[0].scrollIntoView(true);", link);
             Thread.Sleep(2000);
-
-
-
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
 
     }
