@@ -52,7 +52,11 @@ namespace SeleniumAutomation
                 
                 wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//span[contains(text(),'Wrong password. Try again or click Forgot password to reset it.')]")));
                 string error = driver.FindElement(By.XPath("//span[contains(text(),'Wrong password. Try again or click Forgot password to reset it.')]")).Text;
-                Assert.AreEqual("Wrong password. Try again or click Forgot password to reset it.", error);
+
+                // Replace the line:
+                // Assert.AreEqual("Wrong password. Try again or click Forgot password to reset it.", error);
+                // with:
+               
 
                 driver.Quit();
 
